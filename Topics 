@@ -11,3 +11,8 @@ git clone https://github.com/rajasekharsepenta/demo.git
 git add . 
 git commit -m "any message you gyts can write"
 git push 
+
+
+Brnahcing stratgesies:-
+
+created a dev branch for dev environment deployment.
