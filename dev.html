@@ -135,6 +135,37 @@
         .search-section button:hover {
             background-color: #87CEFA;
         }
+        .results-section {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .results-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .results-section ul li {
+            margin-bottom: 10px;
+        }
+        .results-section ul li a {
+            text-decoration: none;
+            color: #4682B4;
+            font-weight: bold;
+        }
+        .results-section ul li a:hover {
+            text-decoration: underline;
+        }
+        .devops-banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .devops-banner img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -150,25 +181,27 @@
     </nav>
 
     <div class="container">
+        <div class="devops-banner">
+            <img src="https://via.placeholder.com/1200x400?text=DevOps+Training+Banner" alt="DevOps Training">
+        </div>
+
         <div class="search-section">
-            <label for="tools">Select Tool:</label>
-            <select id="tools">
+            <label for="topics">Select a Topic:</label>
+            <select id="topics">
                 <option value="jenkins">Jenkins</option>
                 <option value="docker">Docker</option>
                 <option value="kubernetes">Kubernetes</option>
                 <option value="git">Git</option>
                 <option value="terraform">Terraform</option>
-            </select>
-            
-            <label for="databases">Select Database:</label>
-            <select id="databases">
                 <option value="psql">PostgreSQL</option>
                 <option value="mongodb">MongoDB</option>
                 <option value="mysql">MySQL</option>
             </select>
             
-            <button>Search</button>
+            <button onclick="searchTopic()">Search</button>
         </div>
+
+        <div class="results-section" id="results"></div>
 
         <div class="main-content" id="about">
             <h2>About Us</h2>
@@ -197,5 +230,64 @@
     <footer>
         <p>&copy; 2024 Raja DevOps Classes. All rights reserved.</p>
     </footer>
+
+    <script>
+        const topicsData = {
+            jenkins: [
+                { text: 'Jenkins Pipeline', url: 'https://jenkins.io/doc/book/pipeline/' },
+                { text: 'Jenkins Plugins', url: 'https://plugins.jenkins.io/' },
+                { text: 'Jenkins Best Practices', url: 'https://www.cloudbees.com/jenkins/jenkins-best-practices' }
+            ],
+            docker: [
+                { text: 'Docker Overview', url: 'https://docs.docker.com/get-started/overview/' },
+                { text: 'Docker Compose', url: 'https://docs.docker.com/compose/' },
+                { text: 'Docker Hub', url: 'https://hub.docker.com/' }
+            ],
+            kubernetes: [
+                { text: 'Kubernetes Basics', url: 'https://kubernetes.io/docs/tutorials/kubernetes-basics/' },
+                { text: 'Kubernetes Deployment', url: 'https://kubernetes.io/docs/concepts/workloads/controllers/deployment/' },
+                { text: 'Kubernetes Services', url: 'https://kubernetes.io/docs/concepts/services-networking/service/' }
+            ],
+            git: [
+                { text: 'Git Basics', url: 'https://git-scm.com/book/en/v2/Getting-Started-Git-Basics' },
+                { text: 'Git Branching', url: 'https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell' },
+                { text: 'Git Workflow', url: 'https://www.atlassian.com/git/tutorials/comparing-workflows' }
+            ],
+            terraform: [
+                { text: 'Terraform Introduction', url: 'https://www.terraform.io/intro/index.html' },
+                { text: 'Terraform Modules', url: 'https://www.terraform.io/docs/modules/index.html' },
+                { text: 'Terraform Best Practices', url: 'https://learn.hashicorp.com/tutorials/terraform/terraform-best-practices' }
+            ],
+            psql: [
+                { text: 'PostgreSQL Basics', url: 'https://www.postgresql.org/docs/current/tutorial.html' },
+                { text: 'PostgreSQL Advanced', url: 'https://www.postgresql.org/docs/current/index.html' },
+                { text: 'PostgreSQL Performance', url: 'https://www.postgresql.org/docs/current/performance-tips.html' }
+            ],
+            mongodb: [
+                { text: 'MongoDB Basics', url: 'https://docs.mongodb.com/manual/tutorial/getting-started/' },
+                { text: 'MongoDB Aggregation', url: 'https://docs.mongodb.com/manual/aggregation/' },
+                { text: 'MongoDB Indexing', url: 'https://docs.mongodb.com/manual/indexes/' }
+            ],
+            mysql: [
+                { text: 'MySQL Tutorial', url: 'https://dev.mysql.com/doc/refman/8.0/en/tutorial.html' },
+                { text: 'MySQL Performance', url: 'https://dev.mysql.com/doc/refman/8.0/en/optimizing-performance.html' },
+                { text: 'MySQL Backup and Recovery', url: 'https://dev.mysql.com/doc/refman/8.0/en/backup-and-recovery.html' }
+            ]
+        };
+
+        function searchTopic() {
+            const topic = document.getElementById('topics').value;
+            const resultsSection = document.getElementById('results');
+            const selectedTopicData = topicsData[topic];
+
+            let resultsHTML = '<ul>';
+            selectedTopicData.forEach(item => {
+                resultsHTML += `<li><a href="${item.url}" target="_blank">${item.text}</a></li>`;
+            });
+            resultsHTML += '</ul>';
+
+            resultsSection.innerHTML = resultsHTML;
+        }
+    </script>
 </body>
 </html>
