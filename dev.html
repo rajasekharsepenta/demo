@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja DevOps Classes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7ff; /* Sky-blue background */
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #87CEFA, #4682B4); /* Sky-blue gradient */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+            background-color: #4682B4;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #87CEFA;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .main-content h2 {
+            color: #4682B4;
+            border-left: 5px solid #4682B4;
+            padding-left: 10px;
+        }
+        .main-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .main-content ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f4f4f4;
+        }
+        .main-content ul li:last-child {
+            border-bottom: none;
+        }
+        .main-content ul li::before {
+            content: "\f058";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            color: #4682B4;
+        }
+        footer {
+            background-color: #4682B4;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            animation: footerFadeIn 2s ease-in-out;
+        }
+        @keyframes footerFadeIn {
+            from { opacity: 0; transform: translateY(100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        footer p {
+            margin: 0;
+        }
+        .search-section {
+            padding: 20px;
+            background-color: #f0f8ff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .search-section label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #333;
+        }
+        .search-section select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #87CEFA;
+            background-color: #e0f7ff;
+            color: #333;
+        }
+        .search-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4682B4;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-section button:hover {
+            background-color: #87CEFA;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Raja DevOps Classes</h1>
+        <p>Your gateway to mastering DevOps</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="search-section">
+            <label for="tools">Select Tool:</label>
+            <select id="tools">
+                <option value="jenkins">Jenkins</option>
+                <option value="docker">Docker</option>
+                <option value="kubernetes">Kubernetes</option>
+                <option value="git">Git</option>
+                <option value="terraform">Terraform</option>
+            </select>
+            
+            <label for="databases">Select Database:</label>
+            <select id="databases">
+                <option value="psql">PostgreSQL</option>
+                <option value="mongodb">MongoDB</option>
+                <option value="mysql">MySQL</option>
+            </select>
+            
+            <button>Search</button>
+        </div>
+
+        <div class="main-content" id="about">
+            <h2>About Us</h2>
+            <p>Raja DevOps Classes offers top-notch training in DevOps, Cloud Computing, and related technologies. Our expert instructors are dedicated to helping you achieve your career goals.</p>
+        </div>
+
+        <div class="main-content" id="courses">
+            <h2>Our Courses</h2>
+            <ul>
+                <li>Introduction to DevOps</li>
+                <li>Advanced DevOps Practices</li>
+                <li>Continuous Integration and Continuous Deployment (CI/CD)</li>
+                <li>Cloud Computing with AWS and Azure</li>
+                <li>Containerization with Docker and Kubernetes</li>
+            </ul>
+        </div>
+
+        <div class="main-content" id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: pentarajasekhar@gmail.com</p>
+            <p>Phone: +918247866165</p>
+            <p>Address: KPHB, Hyderabad, Telangana, India</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Raja DevOps Classes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
