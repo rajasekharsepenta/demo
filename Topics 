@@ -1,0 +1,13 @@
+SCM:-
+
+git hub
+gitlab
+bitbucket
+
+
+Git Commands :-
+
+git clone https://github.com/rajasekharsepenta/demo.git
+git add . 
+git commit -m "any message you gyts can write"
+git push 
